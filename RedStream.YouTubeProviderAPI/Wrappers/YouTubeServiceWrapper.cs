@@ -1,21 +1,22 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
+using RedStream.YouTubeProviderAPI.Configs;
+using RedStream.YouTubeProviderAPI.Configs.YouTube;
 using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
+using System.Threading.Tasks;
 
 namespace RedStream.YouTubeProviderAPI.Wrappers
 {
-    //TODO - fix namings
     public class YouTubeServiceWrapper : IYouTubeServiceWrapper
     {
-        public YouTubeService YouTubeService { get; private set; }
-
-        public YouTubeService GetYouTubeServiceWrapper(UserCredential credential)
+        public async Task<YouTubeService> GetYouTubeServiceWrapperAsync()
         {
+            UserCredential credential = await YouTubeCredentialsReader.GetCredentials();
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = this.GetType().ToString()
+                ApplicationName = Config.Path
             });
             return youtubeService;
         }
