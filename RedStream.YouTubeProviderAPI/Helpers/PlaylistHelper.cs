@@ -1,6 +1,6 @@
-﻿using Google.Apis.YouTube.v3;
-using Google.Apis.YouTube.v3.Data;
+﻿using Google.Apis.YouTube.v3.Data;
 using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,24 +8,39 @@ namespace RedStream.YouTubeProviderAPI.Helpers
 {
     public class PlaylistHelper
     {
-        public async Task<List<PlaylistItem>> AcquireAsync(string listId, IYouTubeServiceWrapper youtubeService)
+        private readonly IYouTubeServiceWrapper _youtubeService;
+
+        public PlaylistHelper(IYouTubeServiceWrapper youtubeService)
         {
-            var service = await youtubeService.GetYouTubeServiceWrapperAsync();
+            _youtubeService = youtubeService;
+        }
 
-            List<PlaylistItem> playlists = new List<PlaylistItem>();
-            var nextPageToken = "";
-            while (nextPageToken != null)
+        public async Task<List<PlaylistItem>> AcquireAsync(string listId)
+        {
+            //TODO - make more adequate exception handling
+            try
             {
-                var playlistItemsListRequest = service.PlaylistItems.List("snippet");
-                playlistItemsListRequest.PlaylistId = listId;
-                playlistItemsListRequest.MaxResults = 50;
-                playlistItemsListRequest.PageToken = nextPageToken;
+                var service = await _youtubeService.GetYouTubeServiceWrapperAsync();
 
-                var playlistItemsListResponse = await playlistItemsListRequest.ExecuteAsync();
-                playlists.AddRange(playlistItemsListResponse.Items);
-                nextPageToken = playlistItemsListResponse.NextPageToken;
+                List<PlaylistItem> playlists = new List<PlaylistItem>();
+                var nextPageToken = "";
+                while (nextPageToken != null)
+                {
+                    var playlistItemsListRequest = service.PlaylistItems.List("snippet");
+                    playlistItemsListRequest.PlaylistId = listId;
+                    playlistItemsListRequest.MaxResults = 50;
+                    playlistItemsListRequest.PageToken = nextPageToken;
+
+                    var playlistItemsListResponse = await playlistItemsListRequest.ExecuteAsync();
+                    playlists.AddRange(playlistItemsListResponse.Items);
+                    nextPageToken = playlistItemsListResponse.NextPageToken;
+                }
+                return playlists;
             }
-            return playlists;
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RedStream.YouTubeProviderAPI.Services;
+using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
+using System.Collections.Generic;
 
 namespace RedStream.YouTubeProviderAPI.Controllers
 {
@@ -11,11 +9,18 @@ namespace RedStream.YouTubeProviderAPI.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IYouTubeServiceWrapper _youtubeService;
+
+        public ValuesController(IYouTubeServiceWrapper youtubeService)
+        {
+            _youtubeService = youtubeService;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            VideoExtractorService a = new VideoExtractorService();
+            VideoExtractorService a = new VideoExtractorService(_youtubeService);
             a.Run();
             return new string[] { "value1", "value2" };
         }

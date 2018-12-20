@@ -2,6 +2,8 @@
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Google.Apis.YouTube.v3;
+using RedStream.YouTubeProviderAPI.Helpers;
+using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
 using System;
 using System.IO;
 using System.Threading;
@@ -11,6 +13,13 @@ namespace RedStream.YouTubeProviderAPI.Services
 {
     public class VideoExtractorService
     {
+        private PlaylistHelper playlistHelper;
+
+        public VideoExtractorService(IYouTubeServiceWrapper youtubeService)
+        {
+            playlistHelper = new PlaylistHelper(youtubeService);
+        }
+
         public async Task Run()
         {
             UserCredential credential;
@@ -40,25 +49,25 @@ namespace RedStream.YouTubeProviderAPI.Services
             {
                 
                 var uploadsListId = channel.ContentDetails.RelatedPlaylists.Uploads;
-                
+                await playlistHelper.AcquireAsync(uploadsListId);
 
-                var nextPageToken = "";
-                while (nextPageToken != null)
-                {
-                    var playlistItemsListRequest = youtubeService.PlaylistItems.List("snippet");
-                    playlistItemsListRequest.PlaylistId = uploadsListId;
-                    playlistItemsListRequest.MaxResults = 50;
-                    playlistItemsListRequest.PageToken = nextPageToken;
+                //var nextPageToken = "";
+                //while (nextPageToken != null)
+                //{
+                //    var playlistItemsListRequest = youtubeService.PlaylistItems.List("snippet");
+                //    playlistItemsListRequest.PlaylistId = uploadsListId;
+                //    playlistItemsListRequest.MaxResults = 50;
+                //    playlistItemsListRequest.PageToken = nextPageToken;
                     
-                    var playlistItemsListResponse = await playlistItemsListRequest.ExecuteAsync();
+                //    var playlistItemsListResponse = await playlistItemsListRequest.ExecuteAsync();
 
-                    foreach (var playlistItem in playlistItemsListResponse.Items)
-                    {
+                //    foreach (var playlistItem in playlistItemsListResponse.Items)
+                //    {
                         
-                    }
+                //    }
 
-                    nextPageToken = playlistItemsListResponse.NextPageToken;
-                }
+                //    nextPageToken = playlistItemsListResponse.NextPageToken;
+                //}
             }
         }
     }

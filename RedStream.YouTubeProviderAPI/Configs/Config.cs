@@ -8,7 +8,7 @@ namespace RedStream.YouTubeProviderAPI.Configs
 
         static Config()
         {
-            Path = Directory.GetCurrentDirectory();
+            Path = "RedStream";//Directory.GetCurrentDirectory();
         }
     }
 }
