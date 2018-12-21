@@ -10,9 +10,9 @@ namespace RedStream.YouTubeProviderAPI.Wrappers
 {
     public class YouTubeServiceWrapper : IYouTubeServiceWrapper
     {
-        public async Task<YouTubeService> GetYouTubeServiceWrapperAsync()
+        public YouTubeService GetYouTubeServiceWrapper()
         {
-            UserCredential credential = await YouTubeCredentialsReader.GetCredentials();
+            UserCredential credential = YouTubeCredentialsReader.GetCredentials();
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,

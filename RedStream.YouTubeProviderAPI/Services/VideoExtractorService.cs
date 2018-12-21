@@ -1,12 +1,6 @@
-﻿using Google.Apis.Auth.OAuth2;
-using Google.Apis.Services;
-using Google.Apis.Util.Store;
-using Google.Apis.YouTube.v3;
-using RedStream.YouTubeProviderAPI.Helpers;
+﻿using RedStream.YouTubeProviderAPI.Helpers;
 using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
 using System;
-using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace RedStream.YouTubeProviderAPI.Services
@@ -14,60 +8,57 @@ namespace RedStream.YouTubeProviderAPI.Services
     public class VideoExtractorService
     {
         private PlaylistHelper playlistHelper;
+        private FilterHelper filterHelper;
+        private DownloadHelper downloadHelper;
+        private readonly IYouTubeServiceWrapper _youtubeService;
 
         public VideoExtractorService(IYouTubeServiceWrapper youtubeService)
         {
             playlistHelper = new PlaylistHelper(youtubeService);
+            filterHelper = new FilterHelper();
+            downloadHelper = new DownloadHelper();
+            _youtubeService = youtubeService;
         }
 
+        //Test method
         public async Task Run()
         {
-            UserCredential credential;
-            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            try
             {
-                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.Load(stream).Secrets,
-                    new[] { YouTubeService.Scope.YoutubeReadonly },
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore(this.GetType().ToString())
-                );
+                var youtubeService = _youtubeService.GetYouTubeServiceWrapper();
+
+                var channelsListRequest = youtubeService.Channels.List("contentDetails");
+                channelsListRequest.Mine = true;
+
+                var channelsListResponse = await channelsListRequest.ExecuteAsync();
+
+                foreach (var channel in channelsListResponse.Items)
+                {
+                    var uploadsListId = channel.ContentDetails.RelatedPlaylists.Uploads;
+                    await playlistHelper.AcquireAsync(uploadsListId);
+                }
             }
-
-            var youtubeService = new YouTubeService(new BaseClientService.Initializer()
+            catch (Exception ex)
             {
-                HttpClientInitializer = credential,
-                ApplicationName = this.GetType().ToString()
-            });
 
-            var channelsListRequest = youtubeService.Channels.List("contentDetails");
-            channelsListRequest.Mine = true;
-            
-            var channelsListResponse = await channelsListRequest.ExecuteAsync();
+            }
+        }
 
-            foreach (var channel in channelsListResponse.Items)
+        public async Task GetVideo(string searchPhrase)
+        {
+            try
             {
-                
-                var uploadsListId = channel.ContentDetails.RelatedPlaylists.Uploads;
-                await playlistHelper.AcquireAsync(uploadsListId);
+                var youtubeService = _youtubeService.GetYouTubeServiceWrapper();
+                var search = youtubeService.Search.List("snippet");
+                search.Q = searchPhrase;
+                search.MaxResults = 50;
+                var searchListResponse = await search.ExecuteAsync();
+                var videos = filterHelper.GetAllVideos(searchListResponse);
+                downloadHelper.Download(videos[0]);
+            }
+            catch (Exception ex)
+            {
 
-                //var nextPageToken = "";
-                //while (nextPageToken != null)
-                //{
-                //    var playlistItemsListRequest = youtubeService.PlaylistItems.List("snippet");
-                //    playlistItemsListRequest.PlaylistId = uploadsListId;
-                //    playlistItemsListRequest.MaxResults = 50;
-                //    playlistItemsListRequest.PageToken = nextPageToken;
-                    
-                //    var playlistItemsListResponse = await playlistItemsListRequest.ExecuteAsync();
-
-                //    foreach (var playlistItem in playlistItemsListResponse.Items)
-                //    {
-                        
-                //    }
-
-                //    nextPageToken = playlistItemsListResponse.NextPageToken;
-                //}
             }
         }
     }

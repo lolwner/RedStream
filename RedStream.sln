@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.WebUI", "RedStream.WebUI\RedStream.WebUI.csproj", "{F9769C28-EFE6-4B01-AD6D-D07F50EDD99F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.WebUI", "RedStream.WebUI\RedStream.WebUI.csproj", "{F9769C28-EFE6-4B01-AD6D-D07F50EDD99F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.YouTubeProviderAPI", "RedStream.YouTubeProviderAPI\RedStream.YouTubeProviderAPI.csproj", "{18AE9046-E346-4756-B234-CF4F0FAE6A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.YouTubeProviderAPI", "RedStream.YouTubeProviderAPI\RedStream.YouTubeProviderAPI.csproj", "{18AE9046-E346-4756-B234-CF4F0FAE6A41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.Entities", "RedStream.Entities\RedStream.Entities.csproj", "{EE1661CA-1AF8-4617-87F5-48919A02DB14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{18AE9046-E346-4756-B234-CF4F0FAE6A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18AE9046-E346-4756-B234-CF4F0FAE6A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18AE9046-E346-4756-B234-CF4F0FAE6A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE1661CA-1AF8-4617-87F5-48919A02DB14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1661CA-1AF8-4617-87F5-48919A02DB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1661CA-1AF8-4617-87F5-48919A02DB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1661CA-1AF8-4617-87F5-48919A02DB14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

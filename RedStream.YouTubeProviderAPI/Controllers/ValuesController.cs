@@ -21,7 +21,7 @@ namespace RedStream.YouTubeProviderAPI.Controllers
         public ActionResult<IEnumerable<string>> Get()
         {
             VideoExtractorService a = new VideoExtractorService(_youtubeService);
-            a.Run();
+            a.GetVideo("Home Alone Again with the Google Assistant");
             return new string[] { "value1", "value2" };
         }
 

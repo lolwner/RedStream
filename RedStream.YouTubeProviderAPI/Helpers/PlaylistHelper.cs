@@ -1,4 +1,5 @@
 ﻿using Google.Apis.YouTube.v3.Data;
+using NLog;
 using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,20 +9,21 @@ namespace RedStream.YouTubeProviderAPI.Helpers
 {
     public class PlaylistHelper
     {
+        private static Logger _logger;
         private readonly IYouTubeServiceWrapper _youtubeService;
 
         public PlaylistHelper(IYouTubeServiceWrapper youtubeService)
         {
             _youtubeService = youtubeService;
+            _logger = LogManager.GetCurrentClassLogger();
         }
 
+        //TODO - change exception handling
         public async Task<List<PlaylistItem>> AcquireAsync(string listId)
         {
-            //TODO - make more adequate exception handling
             try
             {
-                var service = await _youtubeService.GetYouTubeServiceWrapperAsync();
-
+                var service = _youtubeService.GetYouTubeServiceWrapper();
                 List<PlaylistItem> playlists = new List<PlaylistItem>();
                 var nextPageToken = "";
                 while (nextPageToken != null)
@@ -39,6 +41,7 @@ namespace RedStream.YouTubeProviderAPI.Helpers
             }
             catch (Exception ex)
             {
+                _logger.Error($"{ex.Message} {ex.StackTrace}");
                 return null;
             }
         }

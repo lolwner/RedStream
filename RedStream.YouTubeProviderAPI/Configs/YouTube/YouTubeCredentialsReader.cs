@@ -9,18 +9,18 @@ namespace RedStream.YouTubeProviderAPI.Configs.YouTube
 {
     public static class YouTubeCredentialsReader
     {
-        public static async Task<UserCredential> GetCredentials()
+        public static UserCredential GetCredentials()
         {
             UserCredential credential;
             using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
             {
-                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                credential = Task.Run(() => GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.Load(stream).Secrets,
                     new[] { YouTubeService.Scope.YoutubeReadonly },
                     "user",
                     CancellationToken.None,
                     new FileDataStore(Config.Path)
-                );
+                )).Result;
             }
             return credential;
         }
