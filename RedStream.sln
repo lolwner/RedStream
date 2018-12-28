@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.WebUI", "RedStrea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.YouTubeProviderAPI", "RedStream.YouTubeProviderAPI\RedStream.YouTubeProviderAPI.csproj", "{18AE9046-E346-4756-B234-CF4F0FAE6A41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.Entities", "RedStream.Entities\RedStream.Entities.csproj", "{EE1661CA-1AF8-4617-87F5-48919A02DB14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.Entities", "RedStream.Entities\RedStream.Entities.csproj", "{EE1661CA-1AF8-4617-87F5-48919A02DB14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.ViewModels", "RedStream.ViewModels\RedStream.ViewModels.csproj", "{DFE4CE0A-9E72-4422-981C-011DB81D0CBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.DataAccessLayer", "RedStream.DataAccessLayer\RedStream.DataAccessLayer.csproj", "{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{EE1661CA-1AF8-4617-87F5-48919A02DB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE1661CA-1AF8-4617-87F5-48919A02DB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE1661CA-1AF8-4617-87F5-48919A02DB14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE4CE0A-9E72-4422-981C-011DB81D0CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE4CE0A-9E72-4422-981C-011DB81D0CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE4CE0A-9E72-4422-981C-011DB81D0CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE4CE0A-9E72-4422-981C-011DB81D0CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
