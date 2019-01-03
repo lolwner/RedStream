@@ -2,12 +2,20 @@
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <app-left-panel></app-left-panel>
   </mat-drawer>
-  
+
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      menu
-    </button>
-    <app-head></app-head>
+
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button type="button" mat-button (click)="drawer.toggle()">
+          <mat-icon>menu </mat-icon>
+        </button>
+        <span><a routerLink="/home">HOME</a></span>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/register">Register</a>
+        <a mat-button routerLink="/login">Login</a>
+      </mat-toolbar-row>
+    </mat-toolbar>
   </div>
   <app-container></app-container>
 </mat-drawer-container>
