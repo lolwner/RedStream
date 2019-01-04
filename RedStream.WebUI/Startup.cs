@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.AspNetCore.Routing;
 
 namespace RedStream.WebUI
 {
@@ -113,13 +114,15 @@ namespace RedStream.WebUI
             app.UseCors("EnableCORS");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSpaStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
-            app.UseMvc();
-            app.UseSpaStaticFiles();
+            app.UseMvc(routes => { routes.MapRoute(name: "default", template: "(controller)/(action=index)/(id)"); });
+
 
             app.UseSpa(spa =>
             {
+                // spa.UseProxyToSpaDevelopmentServer("https://localhost:44377");
                 spa.Options.SourcePath = "ClientApp";
                 if (env.IsDevelopment())
                 {
