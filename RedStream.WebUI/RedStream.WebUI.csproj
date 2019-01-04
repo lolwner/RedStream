@@ -16,8 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\pages\" />
     <Folder Include="Controllers\" />
-    <Folder Include="ClientApp\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedStream.ViewModels\RedStream.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
