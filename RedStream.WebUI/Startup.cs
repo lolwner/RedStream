@@ -11,6 +11,7 @@ using System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 
 namespace RedStream.WebUI
 {
@@ -89,7 +90,10 @@ namespace RedStream.WebUI
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
                 options.SlidingExpiration = true;
             });
-
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -112,6 +116,16 @@ namespace RedStream.WebUI
             app.UseCookiePolicy();
             app.UseAuthentication();
             app.UseMvc();
+            app.UseSpaStaticFiles();
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
         }
     }
 }

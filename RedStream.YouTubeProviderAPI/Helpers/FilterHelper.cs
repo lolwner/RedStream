@@ -1,5 +1,5 @@
 ﻿using Google.Apis.YouTube.v3.Data;
-using RedStream.Entities;
+using RedStream.YouTubeProviderAPI.Models;
 using System.Collections.Generic;
 
 namespace RedStream.YouTubeProviderAPI.Helpers

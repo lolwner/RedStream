@@ -1,17 +1,15 @@
 ﻿using MediaToolkit;
 using MediaToolkit.Model;
-using RedStream.Entities;
 using System;
 using System.IO;
 using VideoLibrary;
-using YouTubeVideo = RedStream.Entities.YouTubeVideo;
 
 namespace RedStream.YouTubeProviderAPI.Helpers
 {
     public class DownloadHelper
     {
         //TODO - refactor this method
-        public void Download(YouTubeVideo video)
+        public void Download(RedStream.YouTubeProviderAPI.Models.YouTubeVideo video)
         {
             try
             {

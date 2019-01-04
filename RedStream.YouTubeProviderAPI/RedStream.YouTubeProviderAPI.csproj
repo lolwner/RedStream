@@ -23,8 +23,4 @@
     <PackageReference Include="VideoLibrary" Version="2.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\RedStream.Entities\RedStream.Entities.csproj" />
-  </ItemGroup>
-
 </Project>

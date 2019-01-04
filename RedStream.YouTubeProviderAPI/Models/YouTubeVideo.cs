@@ -1,4 +1,4 @@
-﻿namespace RedStream.Entities
+﻿namespace RedStream.YouTubeProviderAPI.Models
 {
     public class YouTubeVideo
     {
