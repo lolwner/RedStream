@@ -4,28 +4,22 @@ import { NgModule } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeadComponent } from './Components/app-header/head.component';
-import { LeftPanelComponent } from './Components/app-left-panel/left-panel.component';
-import { ContainerComponent } from './Components/app-container/container.component';
+import { HeadComponent } from './components/app-header/head.component';
+import { LeftPanelComponent } from './components/app-left-panel/left-panel.component';
+import { ContainerComponent } from './components/app-container/container.component';
 import { RouterModule, Routes } from '@angular/router';
 import {MatNativeDateModule,MatDatepickerModule,MatIconModule,MatButtonModule,MatCheckboxModule, MatToolbarModule, 
   MatCardModule,MatFormFieldModule,MatInputModule,MatRadioModule,MatListModule} from  '@angular/material';
 
-import { LoginComponent } from './Components/login/login.component';
-import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
-import { HomeComponent } from './Components/home/home.component';
-import { RegisterComponent } from './Components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  // { path: 'hero/:id', component: HeroDetailComponent },
-  // {
-  //   path: 'heroes',
-  //   component: HeroListComponent,
-  //   data: { title: 'Heroes List' }
-  // },
   {
     path: '',
     redirectTo: '/home',
