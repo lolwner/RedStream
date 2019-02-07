@@ -132,10 +132,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_app_container_container_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/app-container/container.component */ "./src/app/components/app-container/container.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/page-not-found/page-not-found.component */ "./src/app/components/page-not-found/page-not-found.component.ts");
-/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
-/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/register/register.component */ "./src/app/components/register/register.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/page-not-found/page-not-found.component */ "./src/app/components/page-not-found/page-not-found.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/register/register.component */ "./src/app/components/register/register.component.ts");
+
+
 
 
 
@@ -153,15 +157,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var appRoutes = [
-    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"] },
-    { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"] },
-    { path: 'register', component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_15__["RegisterComponent"] },
+    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"] },
+    { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_16__["HomeComponent"] },
+    { path: 'register', component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_17__["RegisterComponent"] },
     {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
     },
-    { path: '**', component: _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_13__["PageNotFoundComponent"] }
+    { path: '**', component: _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_15__["PageNotFoundComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -173,10 +177,10 @@ var AppModule = /** @class */ (function () {
                 _components_app_header_head_component__WEBPACK_IMPORTED_MODULE_7__["HeadComponent"],
                 _components_app_left_panel_left_panel_component__WEBPACK_IMPORTED_MODULE_8__["LeftPanelComponent"],
                 _components_app_container_container_component__WEBPACK_IMPORTED_MODULE_9__["ContainerComponent"],
-                _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
-                _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_13__["PageNotFoundComponent"],
-                _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"],
-                _components_register_register_component__WEBPACK_IMPORTED_MODULE_15__["RegisterComponent"]
+                _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
+                _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_15__["PageNotFoundComponent"],
+                _components_home_home_component__WEBPACK_IMPORTED_MODULE_16__["HomeComponent"],
+                _components_register_register_component__WEBPACK_IMPORTED_MODULE_17__["RegisterComponent"]
             ],
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot(appRoutes, { enableTracing: true } // debugging purposes only
@@ -195,7 +199,9 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatDatepickerModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatRadioModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatListModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -226,7 +232,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\nCONTENT"
+module.exports = "<router-outlet></router-outlet>\r\nCONTENT!\r\n"
 
 /***/ }),
 
@@ -388,7 +394,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  home works!\n</p>\n"
+module.exports = "<p>\n  home works! 2\n</p>\n"
 
 /***/ }),
 
@@ -444,7 +450,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n    <span>LOGIN</span>\n  </mat-toolbar>\n  <mat-card class=\"my-card\">\n     <mat-card-content>\n        <form class=\"my-form\">\n           <mat-form-field class=\"full-width\">\n              <mat-label>Email</mat-label>\n              <input type=\"email\" matInput  placeholder=\"Email\" name=\"email\">\n           </mat-form-field>\n           <mat-form-field class=\"full-width\">\n              <mat-label>Password</mat-label>\n              <input type=\"password\" matInput  placeholder=\"Password\" name=\"password\">\n           </mat-form-field>\n        </form>\n     </mat-card-content>\n     <mat-card-actions>\n        <!-- <button mat-raised-button (click)=\"login()\" color=\"primary\">LOGIN</button> -->\n     </mat-card-actions>\n  </mat-card>"
+module.exports = "<mat-toolbar>\n    <span>LOGIN</span>\n  </mat-toolbar>\n  <mat-card class=\"my-card\">\n     <mat-card-content>\n        <form class=\"my-form\" #loginForm=\"ngForm\" (ngSubmit)=\"login(loginForm)\">\n           <mat-form-field class=\"full-width\">\n              <mat-label>Email</mat-label>\n              <input type=\"email\" matInput  placeholder=\"Email\" id=\"username\" name=\"email\" ngModel required autofocus>\n           </mat-form-field>\n           <mat-form-field class=\"full-width\">\n              <mat-label>Password</mat-label>\n              <input type=\"password\" matInput placeholder=\"Password\" id=\"password\" name=\"password\" ngModel required>\n           </mat-form-field>\n           <mat-card-actions>\n            <button mat-raised-button (click)=\"login(loginForm)\" type=\"submit\" color=\"primary\">LOGIN</button>\n         </mat-card-actions>\n        </form>\n     </mat-card-content>\n     \n  </mat-card>"
 
 /***/ }),
 
@@ -460,12 +466,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent() {
+    function LoginComponent(router, http) {
+        this.router = router;
+        this.http = http;
     }
     LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.login = function (form) {
+        var _this = this;
+        var credentials = JSON.stringify(form.value);
+        this.http.post("http://localhost:53028/api/auth/login", credentials, {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                "Content-Type": "application/json"
+            })
+        }).subscribe(function (response) {
+            var token = response.token;
+            localStorage.setItem("jwt", token);
+            _this.invalidLogin = false;
+            _this.router.navigate(["/"]);
+        }, function (err) {
+            _this.invalidLogin = true;
+        });
     };
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -473,7 +501,7 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/components/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/components/login/login.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], LoginComponent);
     return LoginComponent;
 }());

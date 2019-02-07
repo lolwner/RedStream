@@ -2,7 +2,8 @@
   "name": "client-app",
   "version": "0.0.0",
   "scripts": {
-    "start": "ng serve"
+    "start": "ng serve",
+    "rebuild": "ng build --live-reload true --watch"
   },
   "private": true,
   "dependencies": {

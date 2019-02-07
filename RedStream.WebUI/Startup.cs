@@ -93,7 +93,7 @@ namespace RedStream.WebUI
             });
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/dist";
+                configuration.RootPath = "wwwroot";
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -124,9 +124,9 @@ namespace RedStream.WebUI
             {
                 // spa.UseProxyToSpaDevelopmentServer("https://localhost:44377");
                 spa.Options.SourcePath = "ClientApp";
-                if (env.IsDevelopment())
+                if (env.IsProduction())
                 {
-                    spa.UseAngularCliServer(npmScript: "start --configuration=dev");
+                    spa.UseAngularCliServer(npmScript: "ng build --configuration=dev");
                 }
             });
         }

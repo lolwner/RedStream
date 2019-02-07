@@ -8,8 +8,12 @@ import { HeadComponent } from './components/app-header/head.component';
 import { LeftPanelComponent } from './components/app-left-panel/left-panel.component';
 import { ContainerComponent } from './components/app-container/container.component';
 import { RouterModule, Routes } from '@angular/router';
-import {MatNativeDateModule,MatDatepickerModule,MatIconModule,MatButtonModule,MatCheckboxModule, MatToolbarModule, 
-  MatCardModule,MatFormFieldModule,MatInputModule,MatRadioModule,MatListModule} from  '@angular/material';
+import {
+  MatNativeDateModule, MatDatepickerModule, MatIconModule, MatButtonModule, MatCheckboxModule, MatToolbarModule,
+  MatCardModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatListModule
+} from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -58,7 +62,9 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatRadioModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
