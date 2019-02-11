@@ -28,7 +28,6 @@ namespace RedStream.YouTubeProviderAPI.Services
             var searchListResponse = await search.ExecuteAsync();
             var videos = filterHelper.GetAllVideos(searchListResponse);
             downloadHelper.Download(videos[0]);
-
         }
     }
 }
