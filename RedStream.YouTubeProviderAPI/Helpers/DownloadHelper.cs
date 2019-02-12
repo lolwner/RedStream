@@ -9,13 +9,13 @@ namespace RedStream.YouTubeProviderAPI.Helpers
     public class DownloadHelper
     {
         //TODO - refactor this method
-        public void Download(RedStream.YouTubeProviderAPI.Models.YouTubeVideo video)
+        public void Download(string videoId)
         {
             try
             {
                 var source = @"D:\";
                 var youtube = YouTube.Default;
-                var vid = youtube.GetVideo("https://www.youtube.com/watch?v=" + video.Id);
+                var vid = youtube.GetVideo("https://www.youtube.com/watch?v=" + videoId);
                 File.WriteAllBytes(source + vid.FullName, vid.GetBytes());
 
                 var inputFile = new MediaFile { Filename = source + vid.FullName };

@@ -126,7 +126,7 @@ namespace RedStream.WebUI
                 spa.Options.SourcePath = "ClientApp";
                 if (env.IsProduction())
                 {
-                    spa.UseAngularCliServer(npmScript: "ng build --configuration=dev");
+                   // spa.UseAngularCliServer(npmScript: "ng build --configuration=dev");
                 }
             });
         }

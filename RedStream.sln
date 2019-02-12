@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.ViewModels", "Red
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.DataAccessLayer", "RedStream.DataAccessLayer\RedStream.DataAccessLayer.csproj", "{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.Services", "RedStream.Services\RedStream.Services.csproj", "{EAE8C9AA-F8D7-4ED8-A12C-F0403A1A5454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.Shared", "RedStream.Shared\RedStream.Shared.csproj", "{077A9799-F120-4ACB-B06F-C82EFAE014F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2E5AE5E-E0C1-416D-93A1-FEF7398A7A18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE8C9AA-F8D7-4ED8-A12C-F0403A1A5454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE8C9AA-F8D7-4ED8-A12C-F0403A1A5454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE8C9AA-F8D7-4ED8-A12C-F0403A1A5454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE8C9AA-F8D7-4ED8-A12C-F0403A1A5454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077A9799-F120-4ACB-B06F-C82EFAE014F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077A9799-F120-4ACB-B06F-C82EFAE014F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077A9799-F120-4ACB-B06F-C82EFAE014F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077A9799-F120-4ACB-B06F-C82EFAE014F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

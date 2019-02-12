@@ -1,6 +1,7 @@
 ﻿using RedStream.YouTubeProviderAPI.Helpers;
 using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
 using System.Threading.Tasks;
+using RedStream.Shared.Helpers;
 
 namespace RedStream.YouTubeProviderAPI.Services
 {
@@ -26,8 +27,8 @@ namespace RedStream.YouTubeProviderAPI.Services
             search.Q = searchPhrase;
             search.MaxResults = 50;
             var searchListResponse = await search.ExecuteAsync();
-            var videos = filterHelper.GetAllVideos(searchListResponse);
-            downloadHelper.Download(videos[0]);
+            var videos = filterHelper.MapVideos(searchListResponse);
+            downloadHelper.Download(videos[0].VideoId);
         }
     }
 }

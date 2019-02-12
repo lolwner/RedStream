@@ -22,6 +22,8 @@ namespace RedStream.YouTubeProviderAPI.Controllers
         public async void Download([FromBody] VideoDownloadRequestModel search)
         {
             await _videoExtractorService.GetVideo(search.SearchPhrase);
+
+
         }
     }
 }
