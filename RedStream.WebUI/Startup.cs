@@ -122,8 +122,18 @@ namespace RedStream.WebUI
 
             app.UseSpa(spa =>
             {
-                // spa.UseProxyToSpaDevelopmentServer("https://localhost:44377");
+                spa.UseSpaPrerendering(options =>
+                {
+                    options.BootModulePath = $"{spa.Options.SourcePath}/dist-server/main.bundle.js";
+                    options.BootModuleBuilder = env.IsDevelopment()
+                        ? new AngularCliBuilder(npmScript: "build:ssr")
+                        : null;
+                    options.ExcludeUrls = new[] { "/sockjs-node" };
+                });
+
+                spa.UseProxyToSpaDevelopmentServer("https://localhost:44377");
                 spa.Options.SourcePath = "ClientApp";
+                spa.UseAngularCliServer(npmScript: "ng build --configuration=dev");
                 if (env.IsProduction())
                 {
                    // spa.UseAngularCliServer(npmScript: "ng build --configuration=dev");

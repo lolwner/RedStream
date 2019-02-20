@@ -24,6 +24,7 @@
   </ItemGroup>
   
   <Target Name="PostcompileScript" AfterTargets="Build">
-    <Exec Command="ng build --watch" />
+    <!--<Exec Command="ng build" />-->
   </Target>
+  
 </Project>
