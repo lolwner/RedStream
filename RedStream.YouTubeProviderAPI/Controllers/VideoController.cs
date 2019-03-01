@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RedStream.YouTubeProviderAPI.Models.RequestModels;
 using RedStream.YouTubeProviderAPI.Services;
 using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
@@ -7,6 +8,7 @@ namespace RedStream.YouTubeProviderAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class VideoController : ControllerBase
     {
         private readonly IYouTubeServiceWrapper _youtubeService;
@@ -18,10 +20,10 @@ namespace RedStream.YouTubeProviderAPI.Controllers
             _videoExtractorService = new VideoExtractorService(_youtubeService);
         }
 
-        [HttpPost]
-        public async void Download([FromBody] VideoDownloadRequestModel search)
+        [HttpGet]
+        public async void Download()
         {
-            await _videoExtractorService.GetVideo(search.SearchPhrase);
+            await _videoExtractorService.GetVideo("");
 
 
         }

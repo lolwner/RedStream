@@ -21,6 +21,19 @@ namespace RedStream.YouTubeProviderAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvcCore()
+                .AddAuthorization()
+                .AddJsonFormatters();
+
+            services.AddAuthentication("Bearer")
+            .AddIdentityServerAuthentication(options =>
+            {
+                options.Authority = "https://localhost:44399";
+                options.RequireHttpsMetadata = false;
+
+                options.ApiName = "api1";
+            });
+
             services.AddTransient<IYouTubeServiceWrapper, YouTubeServiceWrapper>();
 
         }
@@ -38,7 +51,10 @@ namespace RedStream.YouTubeProviderAPI
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

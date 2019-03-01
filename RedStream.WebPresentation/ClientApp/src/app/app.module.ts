@@ -13,7 +13,6 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
@@ -22,14 +21,15 @@ import { LeftPanelComponent } from './app-left-panel/left-panel.component';
 import { HeadComponent } from './app-header/head.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
+    RegisterComponent,
 
     LeftPanelComponent,
     HeadComponent,
@@ -48,9 +48,9 @@ import { LoginComponent } from './login/login.component';
     MatCardModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatListModule, MatSidenavModule,
 
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'register', component: RegisterComponent },
       {
         path: '',
         redirectTo: '/home',
