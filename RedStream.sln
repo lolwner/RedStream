@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.WebUI", "RedStream.WebUI\RedStream.WebUI.csproj", "{F9769C28-EFE6-4B01-AD6D-D07F50EDD99F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.YouTubeProviderAPI", "RedStream.YouTubeProviderAPI\RedStream.YouTubeProviderAPI.csproj", "{18AE9046-E346-4756-B234-CF4F0FAE6A41}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.ViewModels", "RedStream.ViewModels\RedStream.ViewModels.csproj", "{DFE4CE0A-9E72-4422-981C-011DB81D0CBD}"
@@ -17,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.Shared", "RedStre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.WebPresentation", "RedStream.WebPresentation\RedStream.WebPresentation.csproj", "{7C28A275-A639-4756-A46D-1941A265E8AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.IdentityAPI", "RedStream.IdentityAPI\RedStream.IdentityAPI.csproj", "{4FC17663-38ED-4163-A77F-D0FA96DF81F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedStream.IdentityAPI", "RedStream.IdentityAPI\RedStream.IdentityAPI.csproj", "{4FC17663-38ED-4163-A77F-D0FA96DF81F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Shared", "0 Shared", "{F5212575-F71E-4391-A94D-AC8A85B620C6}"
 EndProject
@@ -35,10 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9769C28-EFE6-4B01-AD6D-D07F50EDD99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9769C28-EFE6-4B01-AD6D-D07F50EDD99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9769C28-EFE6-4B01-AD6D-D07F50EDD99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9769C28-EFE6-4B01-AD6D-D07F50EDD99F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18AE9046-E346-4756-B234-CF4F0FAE6A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18AE9046-E346-4756-B234-CF4F0FAE6A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18AE9046-E346-4756-B234-CF4F0FAE6A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
