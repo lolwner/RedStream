@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Presentation", "2 Present
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Microservices", "1 Microservices", "{D8B70BCC-94A0-4B7B-8036-CB8836F133B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.IntermediateModels", "RedStream.IntermediateModels\RedStream.IntermediateModels.csproj", "{8594A880-AD9A-4EF2-ABDB-E55C1CD9F973}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedStream.UserDataAPI", "RedStream.UserDataAPI\RedStream.UserDataAPI.csproj", "{C519D426-A9B8-4613-80BC-8EA4C9C69DF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{4FC17663-38ED-4163-A77F-D0FA96DF81F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC17663-38ED-4163-A77F-D0FA96DF81F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC17663-38ED-4163-A77F-D0FA96DF81F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8594A880-AD9A-4EF2-ABDB-E55C1CD9F973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8594A880-AD9A-4EF2-ABDB-E55C1CD9F973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8594A880-AD9A-4EF2-ABDB-E55C1CD9F973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8594A880-AD9A-4EF2-ABDB-E55C1CD9F973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C519D426-A9B8-4613-80BC-8EA4C9C69DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C519D426-A9B8-4613-80BC-8EA4C9C69DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C519D426-A9B8-4613-80BC-8EA4C9C69DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C519D426-A9B8-4613-80BC-8EA4C9C69DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +74,8 @@ Global
 		{077A9799-F120-4ACB-B06F-C82EFAE014F4} = {F5212575-F71E-4391-A94D-AC8A85B620C6}
 		{7C28A275-A639-4756-A46D-1941A265E8AA} = {BED026E2-8D3C-415A-AD82-06656CBFC96D}
 		{4FC17663-38ED-4163-A77F-D0FA96DF81F0} = {D8B70BCC-94A0-4B7B-8036-CB8836F133B4}
+		{8594A880-AD9A-4EF2-ABDB-E55C1CD9F973} = {F5212575-F71E-4391-A94D-AC8A85B620C6}
+		{C519D426-A9B8-4613-80BC-8EA4C9C69DF6} = {D8B70BCC-94A0-4B7B-8036-CB8836F133B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A975085-9923-4009-B69D-AAC7A1527173}
