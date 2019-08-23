@@ -1,6 +1,7 @@
 ﻿using RedStream.YouTubeProviderAPI.Helpers;
 using System.Threading.Tasks;
 using RedStream.Shared.Helpers;
+using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
 
 namespace RedStream.YouTubeProviderAPI.Services
 {
@@ -9,11 +10,13 @@ namespace RedStream.YouTubeProviderAPI.Services
         private readonly PlaylistHelper playlistHelper;
         private FilterHelper filterHelper;
         private DownloadHelper downloadHelper;
+        private readonly IYouTubeServiceWrapper _youtubeService;
 
-        public VideoExtractorService()
+        public VideoExtractorService(IYouTubeServiceWrapper youtubeService)
         {
-            playlistHelper = new PlaylistHelper();
+            playlistHelper = new PlaylistHelper(youtubeService);
             filterHelper = new FilterHelper();
+            _youtubeService = youtubeService;
             downloadHelper = new DownloadHelper();
         }
 

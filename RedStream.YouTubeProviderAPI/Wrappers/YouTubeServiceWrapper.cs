@@ -9,10 +9,10 @@ namespace RedStream.YouTubeProviderAPI.Wrappers
 {
     public class YouTubeServiceWrapper : IYouTubeServiceWrapper
     {
-        public YouTubeService GetYouTubeServiceWrapper()
+        public Google.Apis.YouTube.v3.YouTubeService GetYouTubeServiceWrapper()
         {
             UserCredential credential = YouTubeCredentialsReader.GetCredentials();
-            var youtubeService = new YouTubeService(new BaseClientService.Initializer()
+            var youtubeService = new Google.Apis.YouTube.v3.YouTubeService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
                 ApplicationName = Config.Path

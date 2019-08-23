@@ -6,6 +6,6 @@ namespace RedStream.YouTubeProviderAPI.Wrappers.Interfaces
 {
     public interface IYouTubeServiceWrapper
     {
-        YouTubeService GetYouTubeServiceWrapper();
+        Google.Apis.YouTube.v3.YouTubeService GetYouTubeServiceWrapper();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RedStream.YouTubeProviderAPI.Services;
+using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
 
 namespace RedStream.YouTubeProviderAPI.Controllers
 {
@@ -10,10 +11,12 @@ namespace RedStream.YouTubeProviderAPI.Controllers
     public class VideoController : ControllerBase
     {
         private VideoExtractorService _videoExtractorService;
+        private readonly IYouTubeServiceWrapper _youtubeService;
 
-        public VideoController()
+        public VideoController(IYouTubeServiceWrapper youtubeService)
         {
-            _videoExtractorService = new VideoExtractorService();
+            _youtubeService = youtubeService;
+            _videoExtractorService = new VideoExtractorService(_youtubeService);
         }
 
         [HttpGet]

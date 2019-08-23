@@ -16,7 +16,7 @@ namespace RedStream.YouTubeProviderAPI.Configs.YouTube
             {
                 credential = Task.Run(() => GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.Load(stream).Secrets,
-                    new[] { YouTubeService.Scope.YoutubeReadonly },
+                    new[] { Google.Apis.YouTube.v3.YouTubeService.Scope.YoutubeReadonly },
                     "user",
                     CancellationToken.None,
                     new FileDataStore(Config.Path)
