@@ -1,10 +1,9 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
-using Google.Apis.YouTube.v3;
 using RedStream.YouTubeProviderAPI.Configs;
 using RedStream.YouTubeProviderAPI.Configs.YouTube;
 using RedStream.YouTubeProviderAPI.Wrappers.Interfaces;
-using System.Threading.Tasks;
+using Google.Apis.YouTube.v3;
 
 namespace RedStream.YouTubeProviderAPI.Wrappers
 {

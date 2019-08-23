@@ -5,8 +5,8 @@ namespace RedStream.DataAccessLayer
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<YouTubeChannel> YouTubeChannels { get; set; }
-        public DbSet<YouTubeVideo> YouTubeVideos { get; set; }
+        //public DbSet<YouTubeChannel> YouTubeChannels { get; set; }
+        //public DbSet<YouTubeVideo> YouTubeVideos { get; set; }
 
         public ApplicationDbContext() : this(new DbContextOptions<ApplicationDbContext>())
         {

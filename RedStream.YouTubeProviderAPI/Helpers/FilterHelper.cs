@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Google.Apis.YouTube.v3.Data;
 using RedStream.DataAccessLayer.Entities;
+using RedStream.YouTubeService.Entities;
 
 namespace RedStream.Shared.Helpers
 {

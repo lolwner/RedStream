@@ -1,4 +1,6 @@
-﻿namespace RedStream.DataAccessLayer.Entities
+﻿using RedStream.DataAccessLayer.Entities;
+
+namespace RedStream.YouTubeService.Entities
 {
     public class YouTubeChannel : BaseEntity
     {

@@ -10,11 +10,9 @@ namespace RedStream.YouTubeProviderAPI.Helpers
     public class PlaylistHelper
     {
         private static Logger _logger;
-        private readonly IYouTubeServiceWrapper _youtubeService;
 
-        public PlaylistHelper(IYouTubeServiceWrapper youtubeService)
+        public PlaylistHelper()
         {
-            _youtubeService = youtubeService;
             _logger = LogManager.GetCurrentClassLogger();
         }
 
@@ -23,7 +21,6 @@ namespace RedStream.YouTubeProviderAPI.Helpers
         {
             try
             {
-                var service = _youtubeService.GetYouTubeServiceWrapper();
                 List<PlaylistItem> playlists = new List<PlaylistItem>();
                 var nextPageToken = "";
                 while (nextPageToken != null)
